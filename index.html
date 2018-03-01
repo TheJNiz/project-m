@@ -45,6 +45,43 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+		
+		<style>
+		.slidecontainer {
+			width: 100%;
+		}
+
+		.slider {
+			-webkit-appearance: none;
+			width: 100%;
+			height: 25px;
+			background: #d3d3d3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+		}
+
+		.slider:hover {
+			opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+			width: 25px;
+			height: 25px;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+		</style>
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -97,61 +134,61 @@
 					
 
 					<div class="row" >
-						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+						<!--<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
 							<h1 style="font-size: 45px;">Sehingga RM20000, Menggunakan Penyata Gaji & Bank</h1>	
-						</div>
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
+						</div>-->
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInRight" style="margin-top: 13em;">
 							<div class="form-wrap">
 								<div class="tab">
 									
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<ul class="nav nav-pills">
-											  <li class="active"><a href="#" style="">Pinjaman Ansurance</a></li>
-											  <li><a href="#">Pinjaman Jangka Pendek testing</a></li>
-											</ul>
+											
 											<form action="#">
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="fullname">Nama seperti dalam NRIC</label>
-														<input type="text" id="fullname" class="form-control">
-													</div>
+											<div class="col-md-12">
+												<div class="col-md-12">
+													<h3>Sehingga RM20000, Menggunakan Penyata Gaji & Bank</h3>	
+													<ul class="nav nav-pills"  style="margin-bottom: 30px;">
+													  <li class="active"><a href="#" style="">Pinjaman Ansurance</a></li>
+													  <li><a href="#">Pinjaman Jangka Pendek</a></li>
+													</ul>
 												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="date-start">Telefon Bimbit</label>
-														<input type="text" id="date-start" class="form-control">
-													</div>
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="activities">Saya Perlukan (RM)</label>
-														<select name="#" id="activities" class="form-control">
-															<option value="">1000</option>
-															<option value="">1500</option>
-															<option value="">2000</option>
-															<option value="">2500</option>
-														</select>
-													</div>
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="destination">Untuk</label>
-														<select name="#" id="destination" class="form-control">
-															<option value="">3 bulan</option>
-															<option value="">4 bulan</option>
-															<option value="">5 bulan</option>
-															<option value="">6 bulan</option>
-														</select>
-													</div>
-												</div>
-												
-												
 
-												<div class="row form-group">
-													<div class="col-md-12">
+												<div class="col-md-6">
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="activities">Saya Perlukan RM</label><span id="demo"></span></p>
+															<input type="range" min="1000" max="20000" value="1000" class="slider" id="myRange" step="500">
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="destination">Untuk</label> <span id="demo2"></span>
+															<input type="range" min="3" max="24" value="3" class="slider" id="myRange2" >
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="fullname">Nama seperti dalam NRIC</label>
+															<input type="text" id="fullname" class="form-control">
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="date-start">Telefon Bimbit</label>
+															<input type="text" id="date-start" class="form-control">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
 														<input type="submit" class="btn btn-primary btn-block" value="Dapatkan Wang Segera">
 													</div>
+												</div>
+
+												<div class="row form-group">
+													
 												</div>
 											</form>	
 										</div>
@@ -484,7 +521,21 @@
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+	<script>
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		var slider2 = document.getElementById("myRange2");
+		var output2 = document.getElementById("demo2");
+		output.innerHTML = slider.value;
+		output2.innerHTML = slider2.value + " bulan";
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+		
+		slider2.oninput = function() {
+		  output2.innerHTML = this.value+ " bulan";
+		}
+	</script>
 	</body>
 </html>
 
